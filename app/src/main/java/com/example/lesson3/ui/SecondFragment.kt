@@ -21,7 +21,7 @@ class SecondFragment(override var viewModel: BaseViewModel) :
 
     override fun initView() {
         loadData()
-        adapter = MainAdapter(loadData(), this :: onClicked)
+        adapter = MainAdapter(loadData(), this :: onClicked, this::onRemoved)
         binding.recycleView.layoutManager = GridLayoutManager(requireContext(), 3)
         binding.recycleView.adapter = adapter
     }
